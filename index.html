@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baking with the langchain/Anthropic API</title>
+  <link href="style.css" rel="stylesheet" />
+<script defer>
+
+const router = document.querySelector('site-router');
+router.addRoute('/', 'home.html');
+router.addRoute('/about', 'about.html');
+router.addRoute('*', '404.html');
+
+</script>
+ 
+</head>
+
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <site-router>
+     
+    </site-router>
+  </main>
+  
+ 
+</body>
+<script type="module" src="router.js" defer></script>
+<script type="module" src="ai.js"></script>
+</html>
