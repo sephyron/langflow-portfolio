@@ -45,13 +45,14 @@ class AiComponent extends HTMLElement {
         }
         fieldset input[name="image"] {
           width: min-content;
-
+          display: none;
           height: 100%;
           padding: auto;
           align-items: center;
           justify-content: center;
         }
         fieldset label {
+          display: none;
           height: 100%;
           width: 80%;
           overflow: hidden;
@@ -60,13 +61,13 @@ class AiComponent extends HTMLElement {
           text-transform: uppercase;
           text-overflow: ellipsis;
           font-size: 0.75rem;
-          display: flex;
           align-items: center;
           justify-content: center;
         }
         fieldset legend {
           text-transform: uppercase;
           font-size: 0.75rem;
+          font-weight: 700;
         }
       </style>
       <form>
@@ -92,9 +93,15 @@ class AiComponent extends HTMLElement {
     fileInput.addEventListener('change', () => this.updateImageDisplay()); 
     form.onsubmit = async (ev) => {
       ev.preventDefault();
+      const prompt = promptInput.value;
+    if (!prompt.trim()) { 
+      if (!confirm("The prompt field is empty. Do you want to continue?")) {
+        return; 
+      }
+    }
       output.textContent = 'Generating...';
       try {
-        const prompt = promptInput.value; 
+        //const prompt = promptInput.value; 
         let imageBase64 = null; 
         if (fileInput.files.length > 0) { // Check if an image is selected
           const file = fileInput.files[0];

@@ -1,0 +1,45 @@
+:root {
+--font-family-base: 'Familjen Grotesk', sans-serif;
+--font-family-heading: 'League Gothic', sans-serif;
+--font-family-body: 'Familjen Grotesk', sans-serif;
+}
+html {
+font: 400 16px/1.5 var(--font-family-base);
+}
+body {
+margin: 0;
+padding: 1rem;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: var(--font-family-heading);
+}
+p {
+font-family: var(--font-family-body);
+}
+a {
+color: inherit;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+nav ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+nav ul li {
+display: inline-block;
+margin-right: 1rem;
+}
+nav ul li a {
+color: inherit;
+text-decoration: none;
+}
+nav ul li a:hover {
+text-decoration: underline;
+}
+main {
+padding: 1rem;
+}
+
